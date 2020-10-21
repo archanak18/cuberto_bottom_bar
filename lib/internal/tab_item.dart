@@ -65,7 +65,6 @@ class TabItem extends StatefulWidget {
       Key key})
       : super(key: key);
 
-
   @override
   _TabItemState createState() => _TabItemState();
 }
@@ -106,6 +105,24 @@ class _TabItemState extends State<TabItem> {
         padding: EdgeInsets.fromLTRB(15.0, 7.0, 15.0, 7.0),
         duration: Duration(milliseconds: kAnimationDuration),
         decoration: BoxDecoration(
+            boxShadow: [
+              widget.selected
+                  ? BoxShadow(
+                      //i think he proper ahe check kar ekda
+
+                      color: Color(0xff3C3F56),
+                      spreadRadius: 1.0,
+                      blurRadius: 8.0)
+                  : BoxShadow(
+                      color: Colors.transparent,
+                      //blurRadius: 25.0, // soften the shadow
+                      //spreadRadius: 7.0, //extend the shadow
+                      // offset: Offset(
+                      //   -4.0, // Move to right 10  horizontally
+                      //   5.0, // Move to bottom 5 Vertically
+                      // ),
+                    )
+            ],
             gradient: backGradient,
             borderRadius:
                 widget.borderRadius ?? BorderRadius.all(Radius.circular(20.0))),
